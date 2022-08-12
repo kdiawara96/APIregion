@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="2b8cbe78-c74b-4551-95f3-f87c3366ed0c" name="Apigestionregions" url="jdbc:mysql://localhost/Apigestionregions?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="65f744d0-78ed-42c7-b702-09ce70071655" name="api_db" url="jdbc:mysql://localhost/api_db?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="2609acc0-80e1-4f9b-91e1-f4183b567a3f" name="apiBrief-main" url="jdbc:mysql://localhost/api_db?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="48c0a05b-77a5-4a32-89aa-76956ffdfd38" name="apiBrief" url="jdbc:mysql://localhost/api_db?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="c08f8426-5276-461a-8d5a-4d15184a2de6" name="ApiBrief" url="jdbc:mysql://localhost/api_db?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+    </data-sources>
+  </component>
+</project>
