@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "pays")
 @Table(name = "pays")
 @Data
 @NoArgsConstructor
@@ -17,5 +17,8 @@ public class Pays {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom_pays;
+
+    //@OneToMany(mappedBy = "pays")
+    //private Collection<Region> region;
 
 }
