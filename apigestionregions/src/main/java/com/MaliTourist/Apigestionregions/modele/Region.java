@@ -18,18 +18,26 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    @Column(length = 26)
-    private String code_rg;
-    private String nom;
-    private String d_act;
-    private int superficie;
+
+    @Column(name="nom_region",length = 25,unique = true)
+    private String nomRegion;
+
+    @Column( name="codeRegion",length = 10, unique = true, nullable = false)
+    private String codeRegion;
+
+    @Column(length = 50)
+    private String domaineActivite;
+    @Column(length = 50)
+    private String superficie;
+    @Column(length = 50)
     private String langue;
 
     @ManyToOne
     private Pays pays;
 
-   // @OneToMany(mappedBy = "region")
-    //private Collection<Population> population;
+
+    //@OneToMany(mappedBy = "region")
+  // private Collection<Population> population;
 
    
 }

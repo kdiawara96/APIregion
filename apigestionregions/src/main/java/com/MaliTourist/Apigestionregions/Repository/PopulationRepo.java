@@ -9,7 +9,8 @@ import java.util.List;
 
 public interface PopulationRepo extends JpaRepository<Population,Long> {
 
-    @Query(value ="SELECT population.annee, population.habitant FROM population, region WHERE population.region_id = region.id AND region.nom = :region", nativeQuery = true)
+    @Query(value ="SELECT population.annee, population.habitant FROM population, " +
+            "region WHERE population.region_id = region.id AND region.nom_region = :region", nativeQuery = true)
     List<Object[]> listePopulationAnneeParRegion(@Param("region") String region);
 
 

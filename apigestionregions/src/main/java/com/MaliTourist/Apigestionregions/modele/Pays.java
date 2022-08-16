@@ -16,9 +16,12 @@ public class Pays {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom_pays;
 
-    //@OneToMany(mappedBy = "pays")
-    //private Collection<Region> region;
+    @Column(name="nomPays",length = 50,unique = true, nullable = false)
+    private String nomPays;
+
+
+   //@OneToMany(mappedBy = "pays")
+   //private Collection<Region> region;
 
 }
