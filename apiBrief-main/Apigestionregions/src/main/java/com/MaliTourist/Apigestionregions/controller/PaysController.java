@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController //pour designer que ces notre controller Region en Spring boot
-@RequestMapping("/apirest") //notre chemain pour que ça soit accecible  http:localhost:8080/produit
+@RequestMapping("/pays") //notre chemain pour que ça soit accecible  http:localhost:8080/produit
 @AllArgsConstructor
 @Api(value = "api", description = "Une API de GESTION des REGIONS pour faciliter a l'agence de touristes")
 
@@ -23,7 +23,7 @@ public class PaysController {
     //pays
     @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER un Pays!")
     //postMapping permet de poster les données avec le mappage /ajouterPays
-    @PostMapping("/addPays")
+    @PostMapping("/add")
     // pour que spring envoie des données au niveau du body de la requet on utilise @RequestBody
 
     public Object ajouterPays(@RequestBody Pays pays){
@@ -37,14 +37,14 @@ public class PaysController {
 
     //getMapping nous permet de lister les pays grace au get qui nous permet de recuperer la liste
     @ApiOperation(value = "Cette methode va vous permettre de LISTER les PAYS!")
-    @GetMapping("/listPays")
+    @GetMapping("/list")
     public List<Pays> ListerPays(Pays pays){
 
         return pay.listerPays();
     }
 
     @ApiOperation(value = "Cette methode va vous permettre de LISTER un PAYS!")
-    @PutMapping("/updatePays/{id}")
+    @PutMapping("/update/{id}")
     // nous allons prendre PutMapping avec le chemain et l'id
     //on envoie ?name=xx login// xxxxx
     //PathVariable est la variable qui va être entrer dans le url
@@ -56,7 +56,7 @@ public class PaysController {
 
 
     @ApiOperation(value = "Cette methode va vous permettre de SUPPRIMER un PAYS!")
-    @DeleteMapping("/deletePays/{id}")
+    @DeleteMapping("/delete/{id}")
 
 
     public String supprimerPays(@PathVariable Long id){

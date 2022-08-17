@@ -14,5 +14,7 @@ public interface ServiceRegion {
     // Methode pour la recuperation d'un pays à travers le nom
     //Region getRegionByNom_region(String nom_pays);
 
+    Region getNomregion(Region region);
+
 
 }

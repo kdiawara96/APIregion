@@ -36,8 +36,8 @@ public class Region {
     private Pays pays;
 
 
-    //@OneToMany(mappedBy = "region")
-  // private Collection<Population> population;
+   // @OneToMany(mappedBy = "region")
+ // private Collection<Population> population;
 
    
 }

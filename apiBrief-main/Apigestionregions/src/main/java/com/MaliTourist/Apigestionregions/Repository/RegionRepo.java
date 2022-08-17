@@ -52,4 +52,6 @@ public interface RegionRepo extends JpaRepository<Region,Long> {
     List<Object[]> afficherRegionAvecParametre(@Param("nom") String nom);
 
 
+    Region findByNomregion(String nomregion);
+
 }

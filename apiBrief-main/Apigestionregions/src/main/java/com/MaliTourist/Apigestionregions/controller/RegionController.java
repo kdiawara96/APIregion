@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController //pour designer que ces notre controller Region en Spring boot
-@RequestMapping("/apirest") //notre chemain pour que ça soit accecible  http:localhost:8080/produit
+@RequestMapping("/region") //notre chemain pour que ça soit accecible  http:localhost:8080/produit
 @AllArgsConstructor
 @Api(value = "api", description = "Une API de GESTION des REGIONS pour faciliter a l'agence de touristes")
 
@@ -31,7 +31,7 @@ public class RegionController {
 
     @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER les REGIONS")
 
-    @PostMapping("/addRegion")
+    @PostMapping("/add")
     // pour que spring envoie des données au niveau du body de la requet on utilise @RequestBody
 
     public Region ajouterRegion(@RequestBody Region region){
@@ -40,7 +40,7 @@ public class RegionController {
         return reg.ajouterRegion(region);
     }
     @ApiOperation(value = "Cette methode va vous permettre de LISTER les REGIONS")
-    @GetMapping("/listRegion")
+    @GetMapping("/list")
     public List<Region> ListerRegion(){
 
         return reg.listerRegion();
@@ -48,7 +48,7 @@ public class RegionController {
 
 
     @ApiOperation(value = "Cette methode va vous permettre de MODIFIER les REGIONS")
-    @PutMapping("/updateRegion/{id}")
+    @PutMapping("/update/{id}")
     // nous allons prendre PutMapping avec le chemain et l'id
     //on envoie ?name=xx login// xxxxx
     //PathVariable est la variable qui va être entrer dans le url
@@ -60,21 +60,22 @@ public class RegionController {
     }
 
     @ApiOperation(value = "Cette methode va vous permettre de SUPPRIMER les REGIONS")
-    @DeleteMapping("/deleteRegion/{id}") //
+    @DeleteMapping("/delete/{id}") //
 
     public String deleteRegion(@PathVariable Long id){
 
         return reg.supprimerRegion(id);
     }
 
-    @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER la region ainsi que le Pays dans un même formulaire")
+    @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER la region ainsi que le Pays dans un même formulaire si le pays n'existe pas")
     @PostMapping("/addRegionPays")
     public Region ajouterRegionPopulation(@RequestBody Region region) {
 
         //Region RegionNameisPresente = reg.getRegionByNom_region(region.getNom_region());
-        Pays RegionNameisPresente = r_pays.getNompays(region.getPays());
 
-        if(RegionNameisPresente ==null ){
+        Pays PaysNameisPresente = r_pays.getNompays(region.getPays());
+
+        if(PaysNameisPresente == null ){
             r_pays.ajouterPays(region.getPays());
 
      }

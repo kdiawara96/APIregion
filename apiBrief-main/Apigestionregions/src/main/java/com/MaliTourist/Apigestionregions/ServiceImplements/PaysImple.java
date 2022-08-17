@@ -40,7 +40,7 @@ public class PaysImple implements ServicePays {
 
     @Override
     public String supprimerPays(Long id) {
-        r_pays.findById(id);
+        r_pays.deleteById(id);
         return "Pays Supprimer avec succes!";
 
     }

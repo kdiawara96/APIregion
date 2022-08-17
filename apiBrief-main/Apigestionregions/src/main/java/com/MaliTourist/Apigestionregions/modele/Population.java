@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity(name = "population")
 @Table(name = "population")
@@ -16,7 +15,7 @@ public class Population {
     @Column(name="habitant",length = 12, nullable = false)
     private int habitant;
     @Column(name="annee", nullable = false)
-    private Date annee;
+    private String annee;
 
    @ManyToOne
     private Region region;

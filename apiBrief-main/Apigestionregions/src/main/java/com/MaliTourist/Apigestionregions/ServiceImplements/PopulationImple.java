@@ -35,7 +35,7 @@ public class PopulationImple  implements ServicePopulation {
     @Override
     public String supprimerPopulation(Long id) {
 
-        r_population.findById(id);
+        r_population.deleteById(id);
 
         String message ="Population supprimer avec succes !";
         return message;

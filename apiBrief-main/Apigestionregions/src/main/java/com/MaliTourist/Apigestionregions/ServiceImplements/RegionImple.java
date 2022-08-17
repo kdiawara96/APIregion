@@ -29,8 +29,6 @@ public class RegionImple implements ServiceRegion {
     @Override
     public String supprimerRegion(Long id) {
         r_region.deleteById(id);
-
-
         String message = "Région supprimé!";
         return message;
     }
@@ -57,6 +55,11 @@ public class RegionImple implements ServiceRegion {
             //ça retourne le resultat save p au lieu de region
             return r_region.save(p);
         }).orElseThrow(()->new RuntimeException("La région non trouvé!"));
+    }
+
+    @Override
+    public Region getNomregion(Region region) {
+        return r_region.findByNomregion(region.getNomregion());
     }
 
 
