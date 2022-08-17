@@ -31,7 +31,7 @@ public class RegionController {
 
     @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER les REGIONS")
 
-    @PostMapping("/ajouterRegion")
+    @PostMapping("/addRegion")
     // pour que spring envoie des données au niveau du body de la requet on utilise @RequestBody
 
     public Region ajouterRegion(@RequestBody Region region){
@@ -40,7 +40,7 @@ public class RegionController {
         return reg.ajouterRegion(region);
     }
     @ApiOperation(value = "Cette methode va vous permettre de LISTER les REGIONS")
-    @GetMapping("/listerRegion")
+    @GetMapping("/listRegion")
     public List<Region> ListerRegion(){
 
         return reg.listerRegion();
@@ -48,7 +48,7 @@ public class RegionController {
 
 
     @ApiOperation(value = "Cette methode va vous permettre de MODIFIER les REGIONS")
-    @PutMapping("/modifierRegion/{id}")
+    @PutMapping("/updateRegion/{id}")
     // nous allons prendre PutMapping avec le chemain et l'id
     //on envoie ?name=xx login// xxxxx
     //PathVariable est la variable qui va être entrer dans le url
@@ -60,21 +60,21 @@ public class RegionController {
     }
 
     @ApiOperation(value = "Cette methode va vous permettre de SUPPRIMER les REGIONS")
-    @DeleteMapping("/supprimerRegion/{id}") //
+    @DeleteMapping("/deleteRegion/{id}") //
 
-    public String supprimerRegion(@PathVariable Long id){
+    public String deleteRegion(@PathVariable Long id){
 
         return reg.supprimerRegion(id);
     }
 
-    @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER la region ainsi que la POPULATION dans un même formulaire")
-    @PostMapping("/create")
+    @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER la region ainsi que le Pays dans un même formulaire")
+    @PostMapping("/addRegionPays")
     public Region ajouterRegionPopulation(@RequestBody Region region) {
 
         //Region RegionNameisPresente = reg.getRegionByNom_region(region.getNom_region());
-        Pays RegionCodeisPresente = r_pays.getNomPays(region.getPays());
+        Pays RegionNameisPresente = r_pays.getNompays(region.getPays());
 
-        if(RegionCodeisPresente ==null ){
+        if(RegionNameisPresente ==null ){
             r_pays.ajouterPays(region.getPays());
 
      }

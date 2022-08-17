@@ -5,25 +5,29 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface RegionRepo extends JpaRepository<Region,Long> {
 
 
     //pour recuperer la valeur d'un attribut dans la base de donnée
    // Region findByNom_Region(String nom_region);
 
-    @Query(value = "SELECT nom_region FROM `region`", nativeQuery = true)
+    @Query(value = "SELECT nomregion FROM `region`", nativeQuery = true)
 
-    Iterable<Object[]> listeRegionSansPays();
+    List<Object[]> listeRegionSansPays();
+
+    //selectionner le du pays et de la region correspondant
+
+    @Query(value = "SELECT pays.nompays, region.nomregion FROM `pays`, `region` WHERE region.pays_id = pays.id AND ", nativeQuery = true )
+    List<Object[]> listeRegionAvecPays();
 
 
-    @Query(value = "SELECT pays.nom_pays, region.nom_region FROM `pays`, `region` WHERE region.pays_id = pays.id AND ", nativeQuery = true )
-    Iterable<Object[]> listeRegionAvecPays();
+   //Selectionner les région par rapport au pays donner
 
-
-
-    @Query(value = "SELECT region.nom_region FROM `region`, `pays` WHERE region.pays_id = pays.id AND " +
-            "pays.nom_pays = :pays " ,nativeQuery = true)
-    Iterable<Object[]> listeRegionParPays(@Param("pays") String pays);
+    @Query(value = "SELECT region.nomregion FROM `region`, `pays` WHERE region.pays_id = pays.id AND " +
+            "pays.nompays = :pays " ,nativeQuery = true)
+    List<Object[]> listeRegionParPays(@Param("pays") String pays);
 
 
 
@@ -45,7 +49,7 @@ public interface RegionRepo extends JpaRepository<Region,Long> {
 // Rechercher une region avec son nom
 
     @Query(value ="SELECT id FROM region WHERE nom_region = :nom" , nativeQuery = true)
-    Iterable<Object[]> afficherRegionAvecParametre(@Param("nom") String nom);
+    List<Object[]> afficherRegionAvecParametre(@Param("nom") String nom);
 
 
 }

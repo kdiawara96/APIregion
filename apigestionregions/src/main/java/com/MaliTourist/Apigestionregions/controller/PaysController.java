@@ -23,7 +23,7 @@ public class PaysController {
     //pays
     @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER un Pays!")
     //postMapping permet de poster les données avec le mappage /ajouterPays
-    @PostMapping("/ajouterPays")
+    @PostMapping("/addPays")
     // pour que spring envoie des données au niveau du body de la requet on utilise @RequestBody
 
     public Object ajouterPays(@RequestBody Pays pays){
@@ -37,13 +37,14 @@ public class PaysController {
 
     //getMapping nous permet de lister les pays grace au get qui nous permet de recuperer la liste
     @ApiOperation(value = "Cette methode va vous permettre de LISTER les PAYS!")
-    @GetMapping("/listerPays")
+    @GetMapping("/listPays")
     public List<Pays> ListerPays(Pays pays){
+
         return pay.listerPays();
     }
 
     @ApiOperation(value = "Cette methode va vous permettre de LISTER un PAYS!")
-    @PutMapping("/modifierPays/{id}")
+    @PutMapping("/updatePays/{id}")
     // nous allons prendre PutMapping avec le chemain et l'id
     //on envoie ?name=xx login// xxxxx
     //PathVariable est la variable qui va être entrer dans le url
@@ -55,7 +56,7 @@ public class PaysController {
 
 
     @ApiOperation(value = "Cette methode va vous permettre de SUPPRIMER un PAYS!")
-    @DeleteMapping("/supprimerPays/{id}")
+    @DeleteMapping("/deletePays/{id}")
 
 
     public String supprimerPays(@PathVariable Long id){

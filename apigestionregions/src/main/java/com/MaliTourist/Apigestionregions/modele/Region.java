@@ -19,14 +19,14 @@ public class Region {
 
     private Long id;
 
-    @Column(name="nom_region",length = 25,unique = true)
-    private String nomRegion;
+    @Column(name="nomregion",length = 25,unique = true)
+    private String nomregion;
 
-    @Column( name="codeRegion",length = 10, unique = true, nullable = false)
-    private String codeRegion;
+    @Column( name="codereegion",length = 10, unique = true, nullable = false)
+    private String coderegion;
 
     @Column(length = 50)
-    private String domaineActivite;
+    private String domaineactivite;
     @Column(length = 50)
     private String superficie;
     @Column(length = 50)

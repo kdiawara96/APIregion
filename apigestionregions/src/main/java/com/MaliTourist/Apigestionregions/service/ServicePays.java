@@ -12,5 +12,6 @@ public interface ServicePays {
     Pays modifierPays(Long id, Pays pays);
     String supprimerPays(Long id);
     List<Pays> listerPays();
-   Pays getNomPays(Pays pays);
+    //cette methode va nous permettre de verifier le pays dans la base de données
+   Pays getNompays(Pays pays);
 }

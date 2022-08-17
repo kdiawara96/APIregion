@@ -31,7 +31,7 @@ public class PaysImple implements ServicePays {
     @Override
     public Pays modifierPays(Long id, Pays pays) {
         r_pays.findById(id).map(p->{
-                    p.setNomPays(pays.getNomPays());
+                    p.setNompays(pays.getNompays());
                     return r_pays.save(p);
                 }
         ).orElseThrow(()->new RuntimeException("Pays modifier!"));
@@ -53,8 +53,8 @@ public class PaysImple implements ServicePays {
 
 
     @Override
-    public Pays getNomPays(Pays pays) {
-        return r_pays.findByNomPays(pays.getNomPays());
+    public Pays getNompays(Pays pays) {
+        return r_pays.findByNompays(pays.getNompays());
     }
 
 }

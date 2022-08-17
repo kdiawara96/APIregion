@@ -13,12 +13,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 
 public class Pays {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="nomPays",length = 50,unique = true, nullable = false)
-    private String nomPays;
+    @Column(name="nompays",length = 50,unique = true, nullable = false)
+    private String nompays;
 
 
    //@OneToMany(mappedBy = "pays")

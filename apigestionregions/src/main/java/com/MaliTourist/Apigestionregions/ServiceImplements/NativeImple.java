@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 
@@ -24,36 +26,36 @@ public class NativeImple implements ServiceNative {
     //Natif query
 
     @Override
-    public Iterable<Object[]> listeRegionSansPays() {
+    public List<Object[]> listeRegionSansPays() {
         return r_region.listeRegionSansPays();
     }
 
     @Override
-    public Iterable<Object[]> listeRegionAvecPays() {
+    public List<Object[]> listeRegionAvecPays() {
         return r_region.listeRegionAvecPays();
     }
 
     @Override
-    public Iterable<Object[]> listeRegionParPays(String pays) {
+    public List<Object[]> listeRegionParPays(String pays) {
         return r_region.listeRegionParPays(pays);
     }
 
 
     @Override
-    public Iterable<Object[]> listePopulationAnneeParRegion(String region) {
+    public List<Object[]> listePopulationAnneeParRegion(String region) {
         return r_population.listePopulationAnneeParRegion(region);
     }
 
     //Afficher le pays, la region, la population, l'habitant et l'année
     @Override
-    public Iterable<Object[]> liste_pays_region_population(String pays) {
+    public List<Object[]> liste_pays_region_population(String pays) {
         return r_pays.liste_pays_region_population(pays);
     }
 
 
     //Afficher la region demander par le user
     @Override
-    public Iterable<Object[]> afficherRegionAvecParametre(String nom) {
+    public List<Object[]> afficherRegionAvecParametre(String nom) {
         return r_region.afficherRegionAvecParametre(nom);
     }
 

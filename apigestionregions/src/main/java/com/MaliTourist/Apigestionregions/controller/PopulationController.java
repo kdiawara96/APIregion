@@ -23,7 +23,7 @@ public class PopulationController {
     //Population
 
     @ApiOperation(value = "Cette methode va vous permettre d'AJOUTER la POPULATION")
-    @PostMapping("/ajouterPopulation")
+    @PostMapping("/addPopulation")
     // pour que spring envoie des données au niveau du body de la requet on utilise @RequestBody
 
     public Population ajouterPopulation(@RequestBody Population population){
@@ -33,7 +33,7 @@ public class PopulationController {
     }
 
     @ApiOperation(value = "Cette methode va vous permettre de LISTER la POPULATION")
-    @GetMapping("/listerPopulation")
+    @GetMapping("/listPopulation")
     public List<Population> ListerPopulation(){
 
         return popu.listerPopulation();
@@ -42,7 +42,7 @@ public class PopulationController {
 
 
     @ApiOperation(value = "Cette methode va vous permettre de MODIFIER la POPULATION")
-    @PutMapping("/modifierPopulation/{id}")
+    @PutMapping("/updatePopulation/{id}")
     // nous allons prendre PutMapping avec le chemain et l'id
     //on envoie ?name=xx login// xxxxx
     //PathVariable est la variable qui va être entrer dans le url
@@ -55,7 +55,7 @@ public class PopulationController {
 
 
     @ApiOperation(value = "Cette methode va vous permettre de supprimer une POPULATION!")
-    @DeleteMapping("/supprimerPopulation/{id}") //
+    @DeleteMapping("/deletePopulation/{id}") //
 
     public String supprimerPopulation(@PathVariable Long id){
 

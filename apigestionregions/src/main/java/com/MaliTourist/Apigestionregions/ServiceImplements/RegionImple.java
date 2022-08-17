@@ -48,9 +48,9 @@ public class RegionImple implements ServiceRegion {
             //nous allons modifier chaque champ avec le setter et appeller les rentrer(region) avec le getter qui
             //  sera la nouvelle valeur
 
-            p.setNomRegion(region.getNomRegion());
-            p.setCodeRegion (region.getCodeRegion ());
-            p.setDomaineActivite(region.getDomaineActivite());
+            p.setNomregion(region.getNomregion());
+            p.setCoderegion (region.getCoderegion ());
+            p.setDomaineactivite(region.getDomaineactivite());
             p.setLangue(region.getLangue());
             p.setSuperficie(region.getSuperficie());
 
